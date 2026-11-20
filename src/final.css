@@ -1,0 +1,152 @@
+/* ---- app shell and navigation ---- */
+.shell { display: flex; flex-direction: column; height: 100vh; }
+.shell .app { height: auto; flex: 1; min-height: 0; }
+.topnav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-bottom: 1px solid #2a3140;
+  background: #0f1624;
+}
+.topnav .brand { margin-right: 14px; font-weight: 800; color: #f5b83d; }
+.topnav button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  background: none;
+  color: #8fa3c4;
+  font-weight: 600;
+  cursor: pointer;
+}
+.topnav button:hover { background: #1c2330; }
+.topnav button.active { background: #2d6cdf; color: #fff; }
+.topnav button:focus-visible, .sidebar button:focus-visible, .row button:focus-visible,
+.controls button:focus-visible { outline: 2px solid #f5b83d; outline-offset: 2px; }
+
+/* ---- sidebar ---- */
+.search {
+  width: 100%;
+  margin: 6px 0 10px;
+  padding: 7px 10px;
+  border: 1px solid #2a3140;
+  border-radius: 6px;
+  background: #0b0e13;
+  color: #e6e9ef;
+}
+.search.wide { max-width: 420px; margin-bottom: 16px; }
+.sidebar .group { margin-bottom: 4px; }
+.sidebar .group summary {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px 4px;
+  color: #8fa3c4;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.sidebar .count { font-weight: 400; color: #6b7686; }
+.sidebar button { display: flex; align-items: center; gap: 8px; padding-left: 8px; }
+.tick {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #4b5b78;
+  border-radius: 50%;
+  font-size: 11px;
+  line-height: 14px;
+  text-align: center;
+  flex: none;
+}
+.tick.on { background: #22c55e; border-color: #22c55e; color: #052e16; font-weight: 800; }
+
+/* ---- lesson panel ---- */
+.lesson-head { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; }
+.level {
+  padding: 1px 10px;
+  border-radius: 999px;
+  background: #22314f;
+  font-size: 12px;
+  text-transform: capitalize;
+}
+.level-intermediate { background: #3b2a5c; }
+.level-advanced { background: #5c2a3b; }
+.done-tick { color: #86efac; font-size: 13px; font-weight: 700; }
+.objectives { font-size: 14px; }
+.objectives ul { margin: 4px 0 0; padding-left: 20px; }
+.analogy {
+  margin: 0;
+  padding: 10px 12px;
+  border-left: 3px solid #f5b83d;
+  border-radius: 6px;
+  background: #261f10;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.complexity { margin: 0; font-size: 14px; color: #c9d4e6; }
+.more { border: 1px solid #2a3140; border-radius: 6px; padding: 6px 10px; font-size: 14px; }
+.more summary { cursor: pointer; color: #8fa3c4; font-weight: 600; }
+.more ul { margin: 6px 0 2px; padding-left: 20px; line-height: 1.5; }
+.ghost.small { align-self: flex-start; padding: 4px 10px; border: none; border-radius: 6px; background: #1c2330; color: #8fa3c4; cursor: pointer; }
+
+/* ---- predict the output ---- */
+.quiz { padding: 10px 12px; border: 1px solid #2d6cdf; border-radius: 8px; background: #101a2c; }
+.quiz-title { font-size: 12px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; color: #8fa3c4; }
+.quiz-q { margin: 4px 0 8px; }
+.quiz textarea {
+  width: 100%;
+  margin-bottom: 8px;
+  padding: 8px;
+  border: 1px solid #2a3140;
+  border-radius: 6px;
+  background: #0b0e13;
+  color: #e6e9ef;
+  font-family: Consolas, monospace;
+  resize: vertical;
+}
+.quiz-result { padding: 8px 10px; border-radius: 6px; font-size: 14px; }
+.quiz-result.right { background: rgba(34, 197, 94, 0.12); border: 1px solid #22c55e; }
+.quiz-result.wrong { background: rgba(245, 184, 61, 0.1); border: 1px solid #f5b83d; }
+.quiz-result pre { margin: 6px 0; padding: 6px 8px; border-radius: 6px; background: #0b0e13; font-family: Consolas, monospace; white-space: pre-wrap; }
+
+/* ---- practice ---- */
+.tests { padding: 8px 10px; border: 1px solid #2a3140; border-radius: 8px; background: #0b0e13; }
+.tests.all-pass { border-color: #22c55e; }
+.test-row { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; padding: 3px 0; font-size: 14px; }
+.test-row code { font-family: Consolas, monospace; }
+.test-row.pass .test-mark { color: #86efac; }
+.test-row.fail .test-mark { color: #fca5a5; }
+.test-detail { color: #8fa3c4; }
+.solved-msg { margin-top: 6px; color: #86efac; font-weight: 700; }
+
+/* ---- full-width pages ---- */
+.page { flex: 1; width: 100%; max-width: 920px; margin: 0 auto; padding: 22px 28px; overflow: auto; }
+.page h1 { margin: 0 0 14px; }
+.page h2 { margin: 24px 0 8px; font-size: 18px; }
+.stat-row { display: flex; flex-wrap: wrap; gap: 12px; }
+.stat { min-width: 190px; padding: 12px 16px; border: 1px solid #2a3140; border-radius: 10px; background: #0f1624; }
+.stat b { display: block; font-size: 26px; }
+.stat span { color: #8fa3c4; font-size: 13px; }
+.mod-row { display: grid; grid-template-columns: 240px 1fr 50px; align-items: center; gap: 10px; padding: 4px 0; font-size: 14px; }
+.bar-track { height: 10px; border-radius: 999px; background: #1c2330; overflow: hidden; }
+.bar-fill { height: 100%; background: #2d6cdf; }
+.badges { display: flex; flex-wrap: wrap; gap: 10px; }
+.badge { width: 200px; padding: 10px 12px; border: 1px dashed #3a4254; border-radius: 10px; opacity: 0.5; }
+.badge.earned { border: 1px solid #f5b83d; background: #261f10; opacity: 1; }
+.badge b { display: block; }
+.badge span { color: #c9d4e6; font-size: 13px; }
+.danger { padding: 8px 16px; border: none; border-radius: 6px; background: #b42318; color: #fff; cursor: pointer; }
+.glossary div { padding: 8px 0; border-bottom: 1px solid #1c2330; }
+.glossary dt { font-weight: 800; color: #f5b83d; }
+.glossary dd { margin: 2px 0 0; color: #c9d4e6; }
+.setting { display: flex; align-items: center; gap: 14px; padding: 12px 0; border-bottom: 1px solid #1c2330; }
+.setting input[type='checkbox'] { width: 20px; height: 20px; }
+.setting select { margin-left: auto; padding: 6px; border: 1px solid #2a3140; border-radius: 6px; background: #0b0e13; color: #e6e9ef; }
+
+@media (max-width: 1100px) {
+  .shell .app { grid-template-columns: 1fr; overflow: auto; }
+  .shell { height: auto; min-height: 100vh; }
+  .shell .app .panel, .shell .app .sidebar { overflow: visible; border-right: none; }
+  .mod-row { grid-template-columns: 1fr; }
+}

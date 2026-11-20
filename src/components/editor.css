@@ -1,0 +1,38 @@
+.panel .editor {
+  display: flex;
+  flex: 1;
+  min-height: 200px;
+  overflow: hidden;
+  border: 1px solid #2a3140;
+  border-radius: 6px;
+  background: #0b0e13;
+}
+.panel .editor .gutter {
+  flex: 0 0 auto;
+  min-width: 42px;
+  padding: 10px 8px;
+  overflow: hidden;
+  background: #0f1624;
+  color: #6b7686;
+  font-family: Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: right;
+  user-select: none;
+}
+.panel .editor .gn.on { color: #f5b83d; font-weight: 700; }
+.panel .editor textarea {
+  flex: 1;
+  min-height: 0;
+  padding: 10px;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  font-family: Consolas, monospace;
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre;
+  overflow: auto;
+  resize: none;
+  outline: none;
+}
